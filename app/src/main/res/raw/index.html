@@ -1,0 +1,69 @@
+
+<!DOCTYPE>
+<html>
+    <head>
+        <style>
+
+            img {
+                display:block;
+                margin: auto;
+                transition: all 400ms;
+            }
+
+            .rotate90 {
+                -webkit-transform: rotate(90deg);
+                -moz-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+
+        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <meta charset="UTF-8    ">
+        <title>TELEROBOT VERSION 2.0 5/12/2018</title>
+        <script type="text/JavaScript">
+function timedRefresh() {
+objectToBeRefreshed = document.camerainput;
+objectToBeRefreshed.src = objectToBeRefreshed.src + "?" +
+Math.random();
+//Call the timedRefresh() function again after 1000 milliseconds
+setTimeout("timedRefresh()",1000);
+}
+</script>
+    </head>
+    <body>
+        <body onload="JavaScript:timedRefresh();">
+            <div class="container">
+            <img src="camera.jpg" height="50%" id="camerainput" class="rotate90" >
+                          <br>
+                    <table align="center">
+                        <tr>
+                            <td></td>
+                            <td><a  class="btn btn-primary" href="/forward" role="button">Forward</a></td>
+                        </tr>
+                        <tr>
+                            <td> <a  class="btn btn-primary" href="/left" role="button">Left</a></td>
+                            <td style="text-align:center;"><a   class="btn btn-primary" href="/stop" role="button">Stop</a></td>
+                            <td> <a  class="btn btn-primary" href="/right" role="button">Right</a></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><a  class="btn btn-primary" href="/backward" role="button">Backward</a></td>
+                        </tr>
+
+
+
+
+
+
+                    </table>
+
+            <form name="input" action="message" method="get">
+                SHOW MESSAGE: <input type="text" name="text">
+                <input type="submit" value="Submit">
+            </form>
+            </div>
+        </body>
+    </body>
+</html>
